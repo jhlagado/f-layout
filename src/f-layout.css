@@ -8,7 +8,6 @@
 
 .f-layout {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .f-layout.f-show {
@@ -17,30 +16,27 @@
 
 .f-layout.f-row {
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1;
 }
 
 .f-layout.f-column {
   flex-direction: column;
-}
-
-.f-justify-start {
-  justify-content: flex-start !important;
-}
-
-.f-justify-center {
-  justify-content: center;
-}
-
-.f-align-start {
-  align-items: flex-start;
-}
-
-.f-align-center {
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 .f-layout > * {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
+}
+
+.f-padding, .f-layout.f-padding > * {
+  padding:5px;
+}
+
+.f-margin, .f-layout.f-margin > * {
+  margin:5px;
 }
 
 .f-layout > .f-grow {
@@ -52,16 +48,65 @@
 }
 
 .f-layout > .f-fixed {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
 }
 
-.f-layout > .f-alignself-start {
+/* aligning child items */
+
+f-layout.f-row.f-align-top, f-layout.f-column.f-align-left {
+  align-items: flex-start;
+}
+
+f-layout.f-row.f-align-center,
+f-layout.f-column.f-align-center {
+  align-items: center;
+}
+
+f-layout.f-row.f-align-bottom, f-layout.f-column.f-align-right {
+  align-items: flex-end;
+}
+
+f-layout.f-row.f-align-stretch {
+  align-items: stretch;
+}
+
+f-layout.f-row.f-align-baseline {
+  align-items: baseline;
+}
+
+/* aligning self */
+
+f-layout.f-column.f-left, f-layout.f-row.f-top {
   align-self: flex-start;
 }
 
-.f-layout > .f-alignself-center {
+f-layout.f-column.f-center,
+f-layout.f-row.f-center {
   align-self: center;
 }
+
+f-layout.f-column.f-right, f-layout.f-row.f-bottom {
+  align-self: flex-end;
+}
+
+f-layout.f-row.f-stretch {
+  align-self: stretch;
+}
+
+f-layout.f-row.f-baseline {
+  align-self: baseline;
+}
+
+
+/* 
+.f-justify-start {
+  justify-content: flex-start !important;
+}
+
+.f-justify-center {
+  justify-content: center;
+}
+*/
 
 @media only screen and (max-width: 600px) {
   .f-row-s {
