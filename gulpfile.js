@@ -29,22 +29,24 @@ gulp.task('cleanup', function () {
     return gulp.src(paths.toDelete, {read: false}).pipe(rimraf({force: true}));
 });
 
+/*
 gulp.task('minify-css', function() {
-  return gulp.src('styles/*.css')
+  return gulp.src('src/*.css')
     .pipe(cleanCSS({compatibility: 'ie11'}))
     .pipe(gulp.dest('dist'));
 });
+*/
 
-// gulp.task('compress', function (cb) {
-//   pump([
-//         gulp.src('src/*.js'),
-//         uglify(),
-// 		rename({ suffix: '.min' }),
-//         gulp.dest('dist')
-//     ],
-//     cb
-//   );
-// });
+gulp.task('minify-css', function (cb) {
+   pump([
+         gulp.src('src/*.css'),
+         cleanCSS({compatibility: 'ie11'}),
+ 		 rename({suffix: '.min' }),
+         gulp.dest('dist')
+     ],
+     cb
+   );
+});
 
 
 // entry point - run tasks in a sequence
