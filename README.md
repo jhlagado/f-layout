@@ -9,6 +9,9 @@ Add the f-layout CSS file to your index.html:
 <link href="bower_components/dist/f-layout.min.css" rel="stylesheet">
 ```
 
+#### Examples
+You can find examples on how to use f-layout [here](http://lagado.com/)
+
 <link href="bower_components/dist/f-layout.min.css" rel="stylesheet">
 ### Layout Containers
 
