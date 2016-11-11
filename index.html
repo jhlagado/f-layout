@@ -14,6 +14,7 @@
 
       .example {
         background-color: rgba(0,0,0, 0.1);
+        min-height: 60px;
       }
 
       .toolbar {
@@ -36,7 +37,7 @@
     </style>
     <div class="page">
 
-      <div class="f-layout f-row">
+      <div class="example f-layout f-row">
         <span>1</span>
         <span>2</span>
         <span>3</span>
@@ -49,7 +50,7 @@
 &lt;/div&gt;
       </pre>
 
-      <div class="f-layout f-row">
+      <div class="example f-layout f-row">
         <span>1</span>
         <span class="f-grow">2</span>
         <span>3</span>
@@ -62,7 +63,7 @@
 &lt;/div&gt;
       </pre>
 
-      <div class="f-layout f-row">
+      <div class="example f-layout f-row">
         <span>1</span>
         <span class="f-grow" style="text-align: right;">2</span>
         <span>3</span>
@@ -75,7 +76,7 @@
 &lt;/div&gt;
       </pre>
 
-      <div class="f-layout f-row">
+      <div class="example f-layout f-row">
         <span>1</span>
         <span class="f-grow">2</span>
         <span class="f-grow">3</span>
@@ -88,7 +89,7 @@
 &lt;/div&gt;
       </pre>
 
-      <div class="toolbar f-layout f-row f-padding">
+      <div class="example toolbar f-layout f-row f-padding">
         <i class="material-icons">menu</i>
         <strong class="f-grow">Welcome to f-layout!</strong>
         <i class="material-icons">email</i>
@@ -105,7 +106,7 @@
 &lt;/div&gt;
       </pre>
 
-      <div class="f-layout f-column">
+      <div class="example f-layout f-column">
         <div class="toolbar f-layout f-row f-padding">
           <i class="material-icons">menu</i>
           <strong class="f-grow">Welcome to f-layout!</strong>
@@ -134,11 +135,16 @@
 &lt;/div&gt;
       </pre>
 
-      <div class="f-layout f-row f-align-stretch">
-        <div class="sidenav">
-          <p>123</p>
-          <p>456</p>
-          <p>789</p>
+      <div class="example f-layout f-row f-align-stretch">
+        <div class="sidenav f-layout f-column f-padding">
+          <div class="f-layout f-row f-padding" style="text-align:center">
+            Logo
+          </div>
+          <div class="f-grow">
+            <div>123</div>
+            <div>456</div>
+            <div>789</div>
+          </div>
         </div>
         <div class="f-layout f-column f-grow">
           <div class="toolbar f-layout f-row f-padding">

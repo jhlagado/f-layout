@@ -53,47 +53,47 @@
 
 /* aligning child items */
 
-f-layout.f-row.f-align-top, f-layout.f-column.f-align-left {
+.f-layout.f-row.f-align-top, f-layout.f-column.f-align-left {
   align-items: flex-start;
 }
 
-f-layout.f-row.f-align-center,
-f-layout.f-column.f-align-center {
+.f-layout.f-row.f-align-center,
+.f-layout.f-column.f-align-center {
   align-items: center;
 }
 
-f-layout.f-row.f-align-bottom, f-layout.f-column.f-align-right {
+.f-layout.f-row.f-align-bottom, f-layout.f-column.f-align-right {
   align-items: flex-end;
 }
 
-f-layout.f-row.f-align-stretch {
+.f-layout.f-row.f-align-stretch {
   align-items: stretch;
 }
 
-f-layout.f-row.f-align-baseline {
+.f-layout.f-row.f-align-baseline {
   align-items: baseline;
 }
 
 /* aligning self */
 
-f-layout.f-column.f-left, f-layout.f-row.f-top {
+.f-layout.f-column.f-left, f-layout.f-row.f-top {
   align-self: flex-start;
 }
 
-f-layout.f-column.f-center,
-f-layout.f-row.f-center {
+.f-layout.f-column.f-center,
+.f-layout.f-row.f-center {
   align-self: center;
 }
 
-f-layout.f-column.f-right, f-layout.f-row.f-bottom {
+.f-layout.f-column.f-right, f-layout.f-row.f-bottom {
   align-self: flex-end;
 }
 
-f-layout.f-row.f-stretch {
+.f-layout.f-row.f-stretch {
   align-self: stretch;
 }
 
-f-layout.f-row.f-baseline {
+.f-layout.f-row.f-baseline {
   align-self: baseline;
 }
 
