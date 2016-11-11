@@ -1,7 +1,7 @@
 {
   "name": "f-layout",
   "description": "Simple integration for using Materialize CSS with Angular 1",
-  "main": "dist/materialize-directive.min.js",
+  "main": "dist/f-layout.min.js",
   "authors": [
     "jhlagado <jh@lagado.com>"
   ],
@@ -21,5 +21,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "materialize": "^0.97.8"
+  }
 }

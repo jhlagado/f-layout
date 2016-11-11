@@ -24,6 +24,7 @@
   "homepage": "https://github.com/jhlagado/angular1-materialize#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-clean-css": "^2.0.13",
     "gulp-rename": "^1.2.2",
     "gulp-rimraf": "^0.2.0",
     "gulp-typescript": "^2.10.0",
