@@ -1,20 +1,18 @@
 {
   "name": "f-layout",
   "version": "0.0.0",
-  "description": "Simple integration for using Materialize CSS with Angular 1",
-  "main": "dist/materialize-directive.min.js",
+  "description": "An easy to use alternative to grid layouts. A family of composable CSS classes designed to quickly enable flexbox based layout on IE 11+, Edge, Chrome, Firefox and Safari browsers.",
+  "main": "dist/f-layout.min.css",
   "scripts": {
     "dist": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jhlagado/angular1-materialize.git"
+    "url": "git+https://github.com/jhlagado/f-layout.git"
   },
   "keywords": [
-    "material design",
-    "materialize",
-    "angular",
-    "angular v1"
+    "layout",
+    "flexbox"
   ],
   "author": "jhlagado <jh@lagado.com>",
   "license": "MIT",
@@ -27,6 +25,7 @@
     "gulp-clean-css": "^2.0.13",
     "gulp-rename": "^1.2.2",
     "gulp-rimraf": "^0.2.0",
+    "gulp-sass": "^2.3.2",
     "gulp-typescript": "^2.10.0",
     "gulp-uglify": "^2.0.0",
     "pump": "^1.0.1",

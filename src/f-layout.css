@@ -1,34 +1,39 @@
-.f-hide {
+.f-row, .f-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.f-row {
+  flex-direction: row;
+  line-height: 1;
+}
+
+.f-column {
+  flex-direction: column;
+}
+
+.f-row > *,
+.f-column > * {
+  flex: 0 0 auto;
+}
+
+.f-row.f-hide, 
+.f-column.f-hide, 
+.f-row > f-hide, 
+.f-column > f-hide {
   display: none;
 }
 
-.f-show {
+.f-row > f-show, 
+.f-column > f-show {
   display: block;
 }
 
 .f-row.f-show,
 .f-column.f-show {
   display: flex;
-}
-
-.f-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
-  line-height: 1;
-}
-
-.f-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-}
-
-.f-row > *,
-.f-column > * {
-  flex: 0 0 auto;
 }
 
 .f-row.f-padding > *,
@@ -63,7 +68,6 @@
   justify-content: flex-start;
 }
 
-
 .f-row.f-center,
 .f-column.f-middle {
   justify-content: center;
@@ -82,8 +86,6 @@
 .f-row.f-spaced {
   justify-content: space-around;
 }
-
-/*  */
 
 .f-row.f-top, 
 .f-column.f-left {
