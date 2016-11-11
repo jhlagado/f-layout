@@ -10,7 +10,7 @@ Add the f-layout CSS file to your index.html:
 ```
 
 #### Examples
-You can find examples on how to use f-layout [here](https://lagado.github.io/f-layout)
+You can find examples on how to use f-layout [here](https://jhlagado.github.io/f-layout)
 
 <link href="bower_components/dist/f-layout.min.css" rel="stylesheet">
 ### Layout Containers
