@@ -1,5 +1,13 @@
 @mixin layout-rules-common($suffix) {
 
+  .f-hide#{$suffix} { 
+    display: none;
+  }
+
+  .f-show#{$suffix} {
+    display: block;
+  }
+
   .f-row#{$suffix}, .f-column#{$suffix} {
     display: flex;
     flex-direction: row;
@@ -10,23 +18,11 @@
       flex: 0 0 auto; 
     }
 
-    &.f-hide#{$suffix} {
-      display: none;
-    }
-
-    & > .f-hide#{$suffix} {
-      display: none;
-    }
-
-    & > .f-show#{$suffix} {
-      display: block;
-    }
-
     &.f-show#{$suffix} {
       display: flex;
     }
 
-    &.f-padding#{$suffix} > * {
+    &.f-padding#{$suffix} > * { 
       padding:10px;
     }
 
