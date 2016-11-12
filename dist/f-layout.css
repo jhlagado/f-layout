@@ -38,7 +38,7 @@
   flex-direction: row;
   line-height: 1; }
   .f-row.f-left {
-    flex: 0 0 auto; }
+    justify-content: flex-start; }
   .f-row.f-center {
     justify-content: center; }
   .f-row.f-right {
@@ -133,7 +133,7 @@
     flex-direction: row;
     line-height: 1; }
     .f-row-s.f-left-s {
-      flex: 0 0 auto; }
+      justify-content: flex-start; }
     .f-row-s.f-center-s {
       justify-content: center; }
     .f-row-s.f-right-s {
@@ -227,7 +227,7 @@
     flex-direction: row;
     line-height: 1; }
     .f-row-m.f-left-m {
-      flex: 0 0 auto; }
+      justify-content: flex-start; }
     .f-row-m.f-center-m {
       justify-content: center; }
     .f-row-m.f-right-m {
@@ -321,7 +321,7 @@
     flex-direction: row;
     line-height: 1; }
     .f-row-l.f-left-l {
-      flex: 0 0 auto; }
+      justify-content: flex-start; }
     .f-row-l.f-center-l {
       justify-content: center; }
     .f-row-l.f-right-l {

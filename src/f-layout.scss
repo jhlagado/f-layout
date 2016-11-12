@@ -59,118 +59,47 @@
     flex-direction: row; 
     line-height: 1;
 
-    &.f-left#{$suffix} {
-      flex: 0 0 auto; 
-    }
+    @each $type, $prop in (left: flex-start, center: center, right: flex-end, spread: space-between, spaced: space-around) {
+      &.f-#{$type}#{$suffix} {
+        justify-content: $prop;
+      }
+    }  
 
-    &.f-center#{$suffix} {
-      justify-content: center;
-    }
+    @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, stretch: stretch, baseline: baseline) {
+      &.f-#{$type}#{$suffix} {
+        align-items: $prop;
+      }
+    }  
 
-    &.f-right#{$suffix} {
-      justify-content: flex-end;
-    }
+    @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, stretch: stretch, baseline: baseline) {
+      & > .f-self-#{$type}#{$suffix} {
+        align-self: $prop; 
+      }
+    }   
 
-    &.f-spread#{$suffix} {
-      justify-content: space-between;
-    }
-
-    &.f-spaced#{$suffix} {
-      justify-content: space-around;
-    }
-
-    &.f-top#{$suffix} {
-      align-items: flex-start;
-    }
-
-    &.f-middle#{$suffix} {
-      align-items: center;
-    }
-
-    &.f-bottom#{$suffix} {
-      align-items: flex-end;
-    }
-
-    &.f-stretch#{$suffix} {
-      align-items: stretch;
-    }
-
-    &.f-baseline#{$suffix} {
-      align-items: baseline;
-    }
-
-    & > .f-self-top#{$suffix} {
-      align-self: flex-start;
-    }
-
-    & > .f-self-middle#{$suffix} {
-      align-self: center;
-    }
-
-    & > .f-self-bottom#{$suffix} {
-      align-self: flex-end;
-    }
-
-    & > .f-self-stretch#{$suffix} {
-      align-self: stretch;
-    }
-
-    & > .f-self-baseline#{$suffix} {
-      align-self: baseline;
-    }
   }
 
   .f-column#{$suffix} {
 
     flex-direction: column;
 
-    &.f-top#{$suffix} {
-      justify-content: flex-start;
-    }
+    @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, spread: space-between) {
+      &.f-#{$type}#{$suffix} {
+        justify-content: $prop;
+      }
+    }  
 
-    &.f-middle#{$suffix} {
-      justify-content: center;
-    }
+    @each $type, $prop in (left: flex-start, center: center, right: flex-end, stretch: stretch) {
+      &.f-#{$type}#{$suffix} {
+        align-items: $prop;
+      }
+    }  
 
-    &.f-bottom#{$suffix} {
-      justify-content: flex-end;
-    }
-
-    &.f-spread#{$suffix} {
-      justify-content: space-between;
-    }
-
-    &.f-left#{$suffix} {
-      align-items: flex-start;
-    }
-
-    &.f-center#{$suffix} {
-      align-items: center;
-    }
-
-    &.f-right#{$suffix} {
-      align-items: flex-end;
-    }
-
-    &.f-stretch#{$suffix} {
-      align-items: stretch;
-    }
-
-    & > .f-self-left#{$suffix} { 
-      align-self: flex-start;
-    }
-
-    & > .f-self-center#{$suffix} {
-      align-self: center;
-    }
-
-    & > .f-self-right#{$suffix} { 
-      align-self: flex-end;
-    }
-
-    & > .f-self-stretch#{$suffix} {
-      align-self: stretch;
-    }
+    @each $type, $prop in (left: flex-start, center: center, right: flex-end, stretch: stretch) {
+      & > .f-self-#{$type}#{$suffix} {
+        align-self: $prop;
+      }
+    }  
 
   }
 }
