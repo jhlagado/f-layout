@@ -1,26 +1,8 @@
 <html>
   <head>
-  </head>
-  <body>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
     <link href="bower_components/materialize/dist/css/materialize.min.css" rel="stylesheet">
     <link href="dist/f-layout.min.css" rel="stylesheet">
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script>
-      $(function(){
-
-        $('.example').each(function snippet() {
-          var src = $(this);
-          var html = src.html(); 
-          var dest = $('<div id="snippet">');
-          dest.text(html);
-          var pre = $('<pre>');
-          pre.append(dest);
-          src.before(pre); 
-        });
-
-      });
-    </script>
     <style>
       .page {
           width:90%;
@@ -31,38 +13,45 @@
       .example-container > div {
         background-color: rgba(0,0,0, 0.1);
         height: 60px;
+        font-size: 20px;
       }
 
       .example-container2 > div {
         background-color: rgba(0,0,0, 0.1);
         width: 100px;
         height: 200px;
+        font-size: 20px;
       }
 
       .example-container3 > div {
         background-color: rgba(0,0,0, 0.1);
         height: 400px;
-      }
-
-      .toolbar {
-        height: 60px;
-        background-color: rgba(0,0,0, 0.3);
-      }
-
-      .sidenav {
-        width: 150px;
-        background-color: rgba(0,0,0, 0.2);
-      }
-
-      .f-row f-middle {
         font-size: 20px;
       }
-
-      .f-column f-stretch {
-        height:200px;
-      }
     </style>
+  </head>
+  <body>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+      $(function(){
+
+        function snippet() {
+          var src = $(this);
+          var html = src.html(); 
+          var dest = $('<div id="snippet">');
+          dest.text(html);
+          var pre = $('<pre>');
+          pre.append(dest);
+          src.before(pre); 
+        }
+            
+        $('body style').each(snippet);
+        $('.example').each(snippet);
+
+      });
+    </script>
     <div class="page">
+
 
       <div class="example example-container">
         <div class="f-row f-middle">
@@ -189,6 +178,19 @@
           </div>
         </div>
       </div>
+
+      <h4>Additional classes used in these examples</h4>
+      <style>
+          .toolbar {
+            height: 60px;
+            background-color: rgba(0,0,0, 0.3);
+          }
+
+          .sidenav {
+            width: 150px;
+            background-color: rgba(0,0,0, 0.2);
+          }
+       </style>
 
     </div>
   </body>
