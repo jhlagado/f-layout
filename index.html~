@@ -4,10 +4,10 @@
   <body>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
     <link href="bower_components\materialize\dist\css\materialize.min.css" rel="stylesheet">
-    <link href="dist/f-layout.min.css" rel="stylesheet">
+    <link href="src/f-layout.css" rel="stylesheet">
     <style>
       .page {
-          width:90%;
+          width:75%;
           max-width: 800px;
           margin: 30px auto;
       }

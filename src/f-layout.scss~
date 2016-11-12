@@ -1,0 +1,157 @@
+$fred : 14px;
+
+body {
+  font-size: 20px; 
+}
+
+.x {
+  width: $fred;
+}
+
+.f-row, .f-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.f-row {
+  flex-direction: row;
+  line-height: 1;
+}
+
+.f-column {
+  flex-direction: column;
+}
+
+.f-row > *,
+.f-column > * {
+  flex: 0 0 auto;
+}
+
+.f-row.f-hide, 
+.f-column.f-hide, 
+.f-row > f-hide, 
+.f-column > f-hide {
+  display: none;
+}
+
+.f-row > f-show, 
+.f-column > f-show {
+  display: block;
+}
+
+.f-row.f-show,
+.f-column.f-show {
+  display: flex;
+}
+
+.f-row.f-padding > *,
+.f-column.f-padding > * {
+  padding:10px;
+}
+
+.f-row.f-margin > *,
+.f-column.f-margin > * {
+  margin:10px;
+}
+
+.f-row > .f-grow,
+.f-column > .f-grow {
+  flex: 1 1 auto;
+}
+
+.f-row > .f-shrink,
+.f-column > .f-shrink {
+  flex: 0 0;
+}
+
+.f-row > .f-fixed,
+.f-column > .f-fixed {
+  flex: 0 0 auto;
+}
+
+/* aligning child items */
+
+.f-row.f-left,
+.f-column.f-top {
+  justify-content: flex-start;
+}
+
+.f-row.f-center,
+.f-column.f-middle {
+  justify-content: center;
+}
+
+.f-row.f-right,
+.f-column.f-bottom {
+  justify-content: flex-end;
+}
+
+.f-row.f-spread,
+.f-column.f-spread {
+  justify-content: space-between;
+}
+
+.f-row.f-spaced {
+  justify-content: space-around;
+}
+
+.f-row.f-top, 
+.f-column.f-left {
+  align-items: flex-start;
+}
+
+.f-row.f-middle,
+.f-column.f-center {
+  align-items: center;
+}
+
+.f-row.f-bottom, 
+.f-column.f-right {
+  align-items: flex-end;
+}
+
+.f-row.f-stretch,
+.f-column.f-stretch {
+  align-items: stretch;
+}
+
+.f-row.f-baseline {
+  align-items: baseline;
+}
+
+/* aligning self */
+
+.f-row > .f-self-top,
+.f-column > .f-self-left { 
+  align-self: flex-start;
+}
+
+.f-row > .f-self-middle,
+.f-column > .f-self-center {
+  align-self: center;
+}
+
+.f-row > .f-self-bottom,
+.f-column > .f-self-right { 
+  align-self: flex-end;
+}
+
+.f-row > .f-self-stretch,
+.f-column > .f-self-stretch {
+  align-self: stretch;
+}
+
+.f-row > .f-self-baseline {
+  align-self: baseline;
+}
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+}
+
+@media only screen and (min-width: 993px) {
+}
