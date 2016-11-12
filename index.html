@@ -3,8 +3,24 @@
   </head>
   <body>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-    <link href="bower_components\materialize\dist\css\materialize.min.css" rel="stylesheet">
+    <link href="bower_components/materialize/dist/css/materialize.min.css" rel="stylesheet">
     <link href="dist/f-layout.min.css" rel="stylesheet">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+      $(function(){
+
+        $('.example').each(function snippet() {
+          var src = $(this);
+          var html = src.html(); 
+          var dest = $('<div id="snippet">');
+          dest.text(html);
+          var pre = $('<pre>');
+          pre.append(dest);
+          src.before(pre); 
+        });
+
+      });
+    </script>
     <style>
       .page {
           width:90%;
@@ -12,18 +28,18 @@
           margin: 30px auto;
       }
 
-      .example {
+      .example-container > div {
         background-color: rgba(0,0,0, 0.1);
         height: 60px;
       }
 
-      .example2 {
+      .example-container2 > div {
         background-color: rgba(0,0,0, 0.1);
         width: 100px;
         height: 200px;
       }
 
-      .example3 {
+      .example-container3 > div {
         background-color: rgba(0,0,0, 0.1);
         height: 400px;
       }
@@ -48,142 +64,79 @@
     </style>
     <div class="page">
 
-      <div class="example f-row f-middle">
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-      </div>
-<pre>
-&lt;div class=&quot;example f-row f-middle&quot;&gt;
-  &lt;span&gt;1&lt;/span&gt;
-  &lt;span&gt;2&lt;/span&gt;
-  &lt;span&gt;3&lt;/span&gt;
-&lt;/div&gt;
-</pre>
+      <div class="example example-container">
+        <div class="f-row f-middle">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+        </div>
+      </div> 
 
-<div class="example2 f-column f-center">
-  <span>1</span>
-  <span>2</span>
-  <span>3</span>
-</div>
-<pre>
-&lt;div class=&quot;example2 f-column f-center&quot;&gt;
-  &lt;span&gt;1&lt;/span&gt;
-  &lt;span&gt;2&lt;/span&gt;
-  &lt;span&gt;3&lt;/span&gt;
-&lt;/div&gt;
-</pre>
-
-<div class="example f-row f-middle">
-  <span>1</span>
-  <span class="f-grow">2</span>
-  <span>3</span>
-</div>
-<pre>
-&lt;div class=&quot;example f-row f-middle&quot;&gt;
-  &lt;span&gt;1&lt;/span&gt;
-  &lt;span class=&quot;f-grow&quot;&gt;2&lt;/span&gt;
-  &lt;span&gt;3&lt;/span&gt;
-&lt;/div&gt;
-</pre>
-      <div class="example2 f-column f-center">
-        <span>1</span>
-        <span class="f-grow">2</span>
-        <span>3</span>
-      </div>
-<pre>
-&lt;div class=&quot;example2 f-column f-center&quot;&gt;
-  &lt;span&gt;1&lt;/span&gt;
-  &lt;span class=&quot;f-grow&quot;&gt;2&lt;/span&gt;
-  &lt;span&gt;3&lt;/span&gt;
-&lt;/div&gt;
-</pre>
-
-
-
-      <div class="example f-row f-middle">
-        <span>1</span>
-        <span class="f-grow" style="text-align: right;">2</span>
-        <span>3</span>
-      </div>
-<pre>
-&lt;div class=&quot;example f-row f-middle&quot;&gt;
-  &lt;span&gt;1&lt;/span&gt;
-  &lt;span class=&quot;f-grow&quot; style=&quot;text-align: right;&quot;&gt;2&lt;/span&gt;
-  &lt;span&gt;3&lt;/span&gt;
-&lt;/div&gt;
-</pre>
-
-      <div class="example f-row f-top">
-        <span>1</span>
-        <span class="f-self-bottom">2</span>
-        <span>3</span>
+      <div class="example example-container2">
+        <div class="f-column f-center">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+        </div>
       </div>
 
-<pre>
-&lt;div class=&quot;example f-row f-top&quot;&gt;
-  &lt;span&gt;1&lt;/span&gt;
-  &lt;span class=&quot;f-self-bottom&quot;&gt;2&lt;/span&gt;
-  &lt;span&gt;3&lt;/span&gt;
-&lt;/div&gt;
-</pre>
-      <div class="example2 f-column f-stretch f-left f-spread">
-        <span>1</span>
-        <span class="f-self-right">2</span>
-        <span>3</span>
+      <div class="example example-container">
+        <div class="f-row f-middle">
+          <span>1</span>
+          <span class="f-grow">2</span>
+          <span>3</span>
+        </div>
       </div>
-<pre>
-&lt;div class=&quot;example2 f-column f-stretch f-left f-spread&quot;&gt;
-  &lt;span&gt;1&lt;/span&gt;
-  &lt;span class=&quot;f-self-right&quot;&gt;2&lt;/span&gt;
-  &lt;span&gt;3&lt;/span&gt;
-&lt;/div&gt;
-</pre>
 
-
-      <div class="example f-row f-middle">
-        <span>1</span>
-        <span class="f-grow">2</span>
-        <span class="f-grow">3</span>
+      <div class="example example-container2">
+        <div class="f-column f-center">
+          <span>1</span>
+          <span class="f-grow">2</span>
+          <span>3</span>
+        </div>
       </div>
-<pre>
-&lt;div class=&quot;example f-row f-middle&quot;&gt;
-  &lt;span&gt;1&lt;/span&gt;
-  &lt;span class=&quot;f-grow&quot;&gt;2&lt;/span&gt;
-  &lt;span class=&quot;f-grow&quot;&gt;3&lt;/span&gt;
-&lt;/div&gt;
-</pre>
-      <div class="example2 f-column f-center">
-        <span>1</span>
-        <span class="f-grow">2</span>
-        <span class="f-grow">3</span>
-      </div>
-<pre>
-&lt;div class=&quot;example2 f-column f-center&quot;&gt;
-  &lt;span&gt;1&lt;/span&gt;
-  &lt;span class=&quot;f-grow&quot;&gt;2&lt;/span&gt;
-  &lt;span class=&quot;f-grow&quot;&gt;3&lt;/span&gt;
-&lt;/div&gt;
-</pre>
 
-      <div class="example toolbar f-row f-middle f-padding">
-        <i class="material-icons">menu</i>
-        <strong class="f-grow">Welcome to f-layout </strong>
-        <i class="material-icons">email</i>
-        <img style="width:56px;height:56px;border-radius:50%;"
-            src="https://s.gravatar.com/avatar/f850593bdae3cb1c8c535b4acfdfdb98?s=80">
+      <div class="example example-container">
+        <div class="f-row f-middle">
+          <span>1</span>
+          <span class="f-grow" style="text-align: right;">2</span>
+          <span>3</span>
+        </div>
       </div>
-<pre>
-&lt;div class=&quot;example toolbar f-row f-middle f-padding&quot;&gt;
-  &lt;i class=&quot;material-icons&quot;&gt;menu&lt;/i&gt;
-  &lt;strong class=&quot;f-grow&quot;&gt;Welcome to f-layout &lt;/strong&gt;
-  &lt;i class=&quot;material-icons&quot;&gt;email&lt;/i&gt;
-  &lt;img style=&quot;width:56px;height:56px;border-radius:50%;&quot;
-      src=&quot;https://s.gravatar.com/avatar/f850593bdae3cb1c8c535b4acfdfdb98?s=80&quot;&gt;
-&lt;/div&gt;
-</pre>
 
-      <div class="example3 f-column">
+      <div class="example example-container">
+        <div class="f-row f-top">
+          <span>1</span>
+          <span class="f-self-bottom">2</span>
+          <span>3</span>
+        </div>
+      </div>
+
+      <div class="example example-container2">
+        <div class="f-column f-stretch f-left f-spread">
+          <span>1</span>
+          <span class="f-self-right">2</span>
+          <span>3</span>
+        </div>
+      </div>
+
+      <div class="example example-container">
+        <div class="f-row f-middle">
+          <span>1</span>
+          <span class="f-grow">2</span>
+          <span class="f-grow">3</span>
+        </div>
+      </div>
+
+      <div class="example example-container2">
+        <div class="f-column f-center">
+          <span>1</span>
+          <span class="f-grow">2</span>
+          <span class="f-grow">3</span>
+        </div>
+      </div>
+
+      <div class="example example-container">
         <div class="toolbar f-row f-middle f-padding">
           <i class="material-icons">menu</i>
           <strong class="f-grow">Welcome to f-layout </strong>
@@ -191,39 +144,10 @@
           <img style="width:56px;height:56px;border-radius:50%;"
               src="https://s.gravatar.com/avatar/f850593bdae3cb1c8c535b4acfdfdb98?s=80">
         </div>
-        <div class="f-grow" style="overflow-y:auto">
-          <div style="height:1000px;">
-          </div>
-        </div>
       </div>
-<pre>
-&lt;div class=&quot;example3 f-column&quot;&gt;
-  &lt;div class=&quot;toolbar f-row f-middle f-padding&quot;&gt;
-    &lt;i class=&quot;material-icons&quot;&gt;menu&lt;/i&gt;
-    &lt;strong class=&quot;f-grow&quot;&gt;Welcome to f-layout &lt;/strong&gt;
-    &lt;i class=&quot;material-icons&quot;&gt;email&lt;/i&gt;
-    &lt;img style=&quot;width:56px;height:56px;border-radius:50%;&quot;
-        src=&quot;https://s.gravatar.com/avatar/f850593bdae3cb1c8c535b4acfdfdb98?s=80&quot;&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;f-grow&quot; style=&quot;overflow-y:auto&quot;&gt;
-    &lt;div style=&quot;height:1000px;&quot;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</pre>
 
-      <div class="example3 f-row f-stretch">
-        <div class="sidenav f-column f-padding">
-          <div class="f-row f-center f-middle" style="background:rgba(0,0,0,0.1);height:80px;">
-            Logo
-          </div>
-          <div class="f-grow">
-            <div>123</div>
-            <div>456</div>
-            <div>789</div>
-          </div>
-        </div>
-        <div class="f-column f-grow">
+      <div class="example example-container3">
+        <div class="f-column">
           <div class="toolbar f-row f-middle f-padding">
             <i class="material-icons">menu</i>
             <strong class="f-grow">Welcome to f-layout </strong>
@@ -237,33 +161,34 @@
           </div>
         </div>
       </div>
-<pre>
-&lt;div class=&quot;example3 f-row&quot;&gt;
-  &lt;div class=&quot;sidenav f-column f-padding&quot;&gt;
-    &lt;div class=&quot;f-row f-center f-middle f-padding&quot; style=&quot;background:rgba(0,0,0,0.1);height:80px;&quot;&gt;
-      Logo
-    &lt;/div&gt;
-    &lt;div class=&quot;f-grow&quot;&gt;
-      &lt;div&gt;123&lt;/div&gt;
-      &lt;div&gt;456&lt;/div&gt;
-      &lt;div&gt;789&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;f-column f-grow&quot;&gt;
-    &lt;div class=&quot;toolbar f-row f-middle f-padding&quot;&gt;
-      &lt;i class=&quot;material-icons&quot;&gt;menu&lt;/i&gt;
-      &lt;strong class=&quot;f-grow&quot;&gt;Welcome to f-layout &lt;/strong&gt;
-      &lt;i class=&quot;material-icons&quot;&gt;email&lt;/i&gt;
-      &lt;img style=&quot;width:56px;height:56px;border-radius:50%;&quot;
-          src=&quot;https://s.gravatar.com/avatar/f850593bdae3cb1c8c535b4acfdfdb98?s=80&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;f-grow&quot; style=&quot;overflow-y:auto&quot;&gt;
-      &lt;div style=&quot;height:1000px;&quot;&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</pre>
+
+      <div class="example example-container3">
+        <div class="f-row f-stretch">
+          <div class="sidenav f-column f-padding">
+            <div class="f-row f-center f-middle" style="background:rgba(0,0,0,0.1);height:80px;">
+              Logo
+            </div>
+            <div class="f-grow">
+              <div>123</div>
+              <div>456</div>
+              <div>789</div>
+            </div>
+          </div>
+          <div class="f-column f-grow">
+            <div class="toolbar f-row f-middle f-padding">
+              <i class="material-icons">menu</i>
+              <strong class="f-grow">Welcome to f-layout </strong>
+              <i class="material-icons">email</i>
+              <img style="width:56px;height:56px;border-radius:50%;"
+                  src="https://s.gravatar.com/avatar/f850593bdae3cb1c8c535b4acfdfdb98?s=80">
+            </div>
+            <div class="f-grow" style="overflow-y:auto">
+              <div style="height:1000px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </body>
