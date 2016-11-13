@@ -92,7 +92,7 @@ npm install f-layout --save
 Add this tag to your html:
 
 ```html
-    <link href="bower_components/f-layout/dist/f-layout.min.css" rel="stylesheet">
+    <link href="node_modules/f-layout/dist/f-layout.min.css" rel="stylesheet">
 ```
 
 #### Using Bower
