@@ -5,8 +5,7 @@ A family of composable CSS classes designed to quickly enable
 responsive flexbox-based layout on IE 11+, Edge, Chrome, Firefox 
 and Safari browsers.
 
-Here's an example:
-
+Here's a reasonably complicated example:
 ```html
 <div class="f-row f-stretch">
   <div class="sidenav f-hide-s f-column f-padding">
