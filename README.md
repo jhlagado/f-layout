@@ -5,6 +5,16 @@ A family of composable CSS classes designed to quickly enable
 responsive flexbox-based layout on IE 11+, Edge, Chrome, Firefox 
 and Safari browsers.
 
+Using CSS for laying out pages has always been tricky and before CSS3 
+was done mainly by misusing CSS features in order to get the job done.
+The idea behind f-layout is use modern CSS (now well supported
+in browsers) to create a small set of easily learned classes 
+to enable web designers to build layouts quickly.
+
+It uses the <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox CSS model</a>
+but tries to avoid complexity by surfacing only its most useful features 
+and to have sensible defaults to make layout building as simple as possible. 
+      
 Here's a reasonably complicated example:
 ```html
 <div class="f-row f-stretch">
@@ -36,17 +46,6 @@ Here's a reasonably complicated example:
 And this is what it looks like:
 ![example](https://jhlagado.github.io/f-layout/example.png)
 
-
-Using CSS for laying out pages has always been tricky and before CSS3 
-was done mainly by misusing CSS features in order to get the job done.
-The idea behind f-layout is use modern CSS (now well supported
-in browsers) to create a small set of easily learned classes 
-to enable web designers to build layouts quickly.
-
-It uses the <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox CSS model</a>
-but tries to avoid complexity by surfacing only its most useful features 
-and to have sensible defaults to make layout building as simple as possible. 
-      
 In f-layout, all layout is either in a row or a column or 
 a nested combination. Flow is from left to right, top to bottom. 
 
@@ -69,3 +68,27 @@ correspond to screen width break points:
 </table>
 
 To read the f-layout documentation go [here](https://jhlagado.github.io/f-layout)
+
+### Installing
+
+#### Using Npm
+
+```bash
+npm install f-layout --save
+```
+Add this tag to your html:
+
+```html
+    <link href="bower_components/f-layout/dist/f-layout.min.css" rel="stylesheet">
+```
+
+#### Using Bower
+
+```bash
+bower install f-layout --save
+```
+Add this tag to your html:
+
+```html
+    <link href="bower_components/f-layout/dist/f-layout.min.css" rel="stylesheet">
+```
