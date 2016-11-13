@@ -15,6 +15,19 @@ It uses the <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">fl
 but tries to avoid complexity by surfacing only its most useful features 
 and to have sensible defaults to make layout building as simple as possible. 
       
+Here's a simple example:
+```html
+<div class="toolbar f-row f-middle f-padding">
+  <i class="material-icons">menu</i>
+  <strong class="f-grow">Welcome to f-layout </strong>
+  <i class="material-icons">email</i>
+  <img style="width:56px;height:56px;border-radius:50%;"
+      src="https://s.gravatar.com/avatar/f850593bdae3cb1c8c535b4acfdfdb98?s=80">
+</div>
+```
+and this is what it looks like:
+![example](https://jhlagado.github.io/f-layout/example0.png)
+
 Here's a reasonably complicated example:
 ```html
 <div class="f-row f-stretch">
@@ -43,7 +56,7 @@ Here's a reasonably complicated example:
   </div>
 </div>
 ```
-And this is what it looks like:
+which looks like this:
 ![example](https://jhlagado.github.io/f-layout/example.png)
 
 In f-layout, all layout is either in a row or a column or 
