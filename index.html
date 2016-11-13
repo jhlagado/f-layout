@@ -67,7 +67,7 @@
     <div class="page">
 
       <h1>f-layout: a guide</h1>
-      <p>An easy to use alternative to grid layouts. 
+      <p>f-layout is an easy to use alternative to grid layouts. 
       A family of composable CSS classes designed to quickly enable 
       responsive flexbox-based layout on IE 11+, Edge, Chrome, Firefox 
       and Safari browsers.</p>
@@ -473,11 +473,14 @@
 
       <h4>Additional classes used in these examples</h4>
       <style>
-          .toolbar, .toolbar {
+          .toolbar {
             height: 60px;
             background-color: rgba(0,0,0, 0.3) !important;
           }
 
+          .toolbar > .f-grow {
+            background-color: transparent !important;
+          }  
           .sidenav {
             width: 150px;
             background-color: rgba(0,0,0, 0.2) !important;

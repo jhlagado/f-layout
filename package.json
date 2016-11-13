@@ -1,6 +1,6 @@
 {
   "name": "f-layout",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "An easy to use alternative to grid layouts. A family of composable CSS classes designed to quickly enable flexbox based layout on IE 11+, Edge, Chrome, Firefox and Safari browsers.",
   "main": "dist/f-layout.min.css",
   "scripts": {
@@ -17,9 +17,9 @@
   "author": "jhlagado <jh@lagado.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jhlagado/angular1-materialize/issues"
+    "url": "https://github.com/jhlagado/f-layout/issues"
   },
-  "homepage": "https://github.com/jhlagado/angular1-materialize#readme",
+  "homepage": "https://github.com/jhlagado/f-layout#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-clean-css": "^2.0.13",
