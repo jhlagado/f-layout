@@ -80,7 +80,7 @@ correspond to screen width break points:
   <tr><td>l</td><td>large</td><td>more than 992px</td></tr>
 </table>
 
-To read the f-layout documentation go [here](https://jhlagado.github.io/f-layout)
+[Go here](https://jhlagado.github.io/f-layout) to read the f-layout documentation.
 
 ### Installing
 
