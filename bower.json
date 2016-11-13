@@ -1,7 +1,7 @@
 {
   "name": "f-layout",
   "description": "Simple integration for using Materialize CSS with Angular 1",
-  "main": "dist/f-layout.min.js",
+  "main": "dist/f-layout.js",
   "authors": [
     "jhlagado <jh@lagado.com>"
   ],
@@ -14,7 +14,7 @@
     "angular",
     "v1"
   ],
-  "homepage": "https://github.com/jhlagado/angular1-materialize",
+  "homepage": "https://github.com/jhlagado/f-layout",
   "ignore": [
     "**/.*",
     "node_modules",
