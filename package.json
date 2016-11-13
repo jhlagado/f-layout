@@ -1,6 +1,6 @@
 {
   "name": "f-layout",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An easy to use alternative to grid layouts. A family of composable CSS classes designed to quickly enable flexbox based layout on IE 11+, Edge, Chrome, Firefox and Safari browsers.",
   "main": "dist/f-layout.min.css",
   "scripts": {
