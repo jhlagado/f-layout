@@ -1,13 +1,5 @@
 @mixin layout-rules-common($suffix) {
 
-  .f-hide#{$suffix} { 
-    display: none;
-  }
-
-  .f-show#{$suffix} {
-    display: block;
-  }
-
   .f-row#{$suffix}, .f-column#{$suffix} {
     display: flex;
     flex-direction: row;
@@ -30,24 +22,8 @@
       margin:10px;
     }
 
-    & > .f-grow#{$suffix} {
-      flex: 1 1 auto;
-    }
-
-    & > .f-shrink#{$suffix} {
-      flex: 0 0;
-    }
-
-    & > .f-fixed#{$suffix} {
-      flex: 0 0 auto;
-    }
-
-    @for $i from 1 through 5 {
-      & > .f-order-#{$i}#{$suffix} {
-        order: $i;  
-      }
-    }
   }
+
 
 }
 
@@ -59,7 +35,7 @@
     flex-direction: row; 
     line-height: 1;
 
-    @each $type, $prop in (left: flex-start, center: center, right: flex-end, spread: space-between, spaced: space-around) {
+    @each $type, $prop in (left: flex-start, center: center, right: flex-end, space-between: space-between, space-around: space-around) {
       &.f-#{$type}#{$suffix} {
         justify-content: $prop;
       }
@@ -83,7 +59,7 @@
 
     flex-direction: column;
 
-    @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, spread: space-between) {
+    @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, space-between: space-between, space-around: space-around) {
       &.f-#{$type}#{$suffix} {
         justify-content: $prop;
       }
@@ -102,6 +78,33 @@
     }  
 
   }
+
+  .f-hide#{$suffix} { 
+    display: none;
+  }
+
+  .f-show#{$suffix} {
+    display: block;
+  }
+
+  .f-grow#{$suffix} {
+    flex: 1 1 auto;
+  }
+
+  .f-shrink#{$suffix} {
+    flex: 0 0;
+  }
+
+  .f-fixed#{$suffix} {
+    flex: 0 0 auto;
+  }
+
+  @for $i from 1 through 5 {
+    .f-order-#{$i}#{$suffix} {
+      order: $i;  
+    }
+  }
+
 }
 
 @include layout-rules("");
