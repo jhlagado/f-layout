@@ -1,6 +1,6 @@
 {
   "name": "f-layout",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Simple integration for using Materialize CSS with Angular 1",
   "main": "dist/f-layout.js",
   "authors": [
@@ -22,5 +22,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
+  ]
 }
