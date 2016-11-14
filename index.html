@@ -1,7 +1,7 @@
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-    <link href="bower_components/materialize/dist/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="lib/dist/materialize.min.css" rel="stylesheet">
     <link href="dist/f-layout.min.css" rel="stylesheet">
     <style>
       .page {
@@ -12,11 +12,11 @@
 
       .f-row span, .f-column span {
         background-color: rgba(0,0,0, 0.1);
-      }  
+      }
 
       .f-grow {
         background-color: rgba(0,0,0, 0.3) !important;
-      }      
+      }
 
       .example-container > div {
         background-color: rgba(0,0,0, 0.1);
@@ -32,7 +32,7 @@
       }
 
       .example-container3 > div {
-        border: 1px solid black;    
+        border: 1px solid black;
         background-color: white;
         height: 400px;
         font-size: 20px;
@@ -45,45 +45,26 @@
     </style>
   </head>
   <body>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script>
-      $(function(){
-
-        function snippet() {
-          var src = $(this);
-          var html = src.html(); 
-          var dest = $('<div id="snippet">');
-          dest.text(html);
-          var pre = $('<pre>');
-          pre.append(dest);
-          src.after(pre); 
-        }
-            
-        $('body style').each(snippet);
-        $('.example').each(snippet);
-
-      });
-    </script>
     <div class="page">
 
-      <h1>f-layout: a guide</h1>
-      <p>f-layout is an easy to use alternative to grid layouts. 
-      A family of composable CSS classes designed to quickly enable 
-      responsive flexbox-based layout on IE 11+, Edge, Chrome, Firefox 
+      <h1>f-layout guide</h1>
+      <p>f-layout is an easy to use alternative to grid layouts.
+      A family of composable CSS classes designed to quickly enable
+      responsive flexbox-based layout on IE 11+, Edge, Chrome, Firefox
       and Safari browsers.</p>
-      <p>Using CSS for laying out pages has always been tricky and before CSS3 
+      <p>Using CSS for laying out pages has always been tricky and before CSS3
       was done mainly by misusing CSS features in order to get the job done.
       The idea behind f-layout is use modern CSS (now well supported
-      in browsers) to create a small set of easily learned classes 
+      in browsers) to create a small set of easily learned classes
       to enable web designers to build layouts quickly.</p>
       <p>It uses the <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox CSS model</a>
-      but tries to avoid complexity by surfacing only its most useful features 
-      and to have sensible defaults to make layout building as simple as possible. 
-      </p>      
-      <p>In f-layout, all layout is either in a row or a column or 
-      a nested combination. Flow is from left to right, top to bottom. 
+      but tries to avoid complexity by surfacing only its most useful features
+      and to have sensible defaults to make layout building as simple as possible.
+      </p>
+      <p>In f-layout, all layout is either in a row or a column or
+      a nested combination. Flow is from left to right, top to bottom.
       For element alignment, it follows CSS conventions of using terms like "left", "right", "top" and "bottom".
-      It also uses the term "center" to denote horizontal centering as opposed 
+      It also uses the term "center" to denote horizontal centering as opposed
       to "middle" for vertical centering.</p>
       <p>Elements can be hidden or shown and reordered. All of the features of
       f-layout can be applied responsively so as to deal with different
@@ -109,7 +90,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Center</h5>
       <div class="example example-container">
         <div class="f-row f-center f-middle">
@@ -117,7 +98,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Right</h5>
       <div class="example example-container">
         <div class="f-row f-right f-middle">
@@ -125,7 +106,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Space between (default)</h5>
       <div class="example example-container">
         <div class="f-row f-space-between">
@@ -133,7 +114,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Space around</h5>
       <div class="example example-container">
         <div class="f-row f-space-around f-middle">
@@ -141,7 +122,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
 
 
 
@@ -153,7 +134,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Middle</h5>
       <div class="example example-container">
         <div class="f-row f-middle">
@@ -161,7 +142,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Bottom</h5>
       <div class="example example-container">
         <div class="f-row f-bottom">
@@ -169,7 +150,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
 
       <h5>Stretch (default)</h5>
       <div class="example example-container">
@@ -178,7 +159,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Baseline</h5>
       <div class="example example-container">
         <div class="f-row f-baseline">
@@ -186,12 +167,12 @@
           <span>i</span>
           <span>g</span>
         </div>
-      </div> 
+      </div>
 
 
-      <h3>Column Layout</h3>  
+      <h3>Column Layout</h3>
       <p>Alignment defaults: f-space-between, f-stretch</p>
-      
+
       <h5>Top</h5>
       <div class="example example-container2">
         <div class="f-column f-top f-center">
@@ -199,7 +180,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Middle</h5>
       <div class="example example-container2">
         <div class="f-column f-middle f-center">
@@ -207,7 +188,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Bottom</h5>
       <div class="example example-container2">
         <div class="f-column f-bottom f-center">
@@ -215,7 +196,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Space between (default)</h5>
       <div class="example example-container2">
         <div class="f-column f-space-between f-center">
@@ -223,7 +204,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Space around</h5>
       <div class="example example-container2">
         <div class="f-column f-space-around f-center">
@@ -231,7 +212,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
 
       <h5>Left</h5>
       <div class="example example-container2">
@@ -240,7 +221,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Center</h5>
       <div class="example example-container2">
         <div class="f-column f-center">
@@ -248,7 +229,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Right</h5>
       <div class="example example-container2">
         <div class="f-column f-right">
@@ -256,7 +237,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Stretch (default)</h5>
       <div class="example example-container2">
         <div class="f-column f-stretch">
@@ -264,7 +245,7 @@
           <span>2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
 
       <h5>Self alignment</h5>
       <p>Finer-grained alignment of individual element be achieved with
@@ -278,7 +259,7 @@
           <span class="f-self-top">2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Self Middle</h5>
       <div class="example example-container">
         <div class="f-row f-top">
@@ -286,7 +267,7 @@
           <span class="f-self-middle">2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Self Bottom</h5>
       <div class="example example-container">
         <div class="f-row f-middle">
@@ -294,7 +275,7 @@
           <span class="f-self-bottom">2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Self Stretch</h5>
       <div class="example example-container">
         <div class="f-row f-middle">
@@ -302,7 +283,7 @@
           <span class="f-self-stretch">2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Self Baseline</h5>
       <div class="example example-container">
         <div class="f-row f-middle">
@@ -310,7 +291,7 @@
           <span class="f-self-baseline">i</span>
           <span class="f-self-baseline">g</span>
         </div>
-      </div> 
+      </div>
       <h5>Self Left</h5>
       <div class="example example-container2">
         <div class="f-column f-center">
@@ -318,7 +299,7 @@
           <span class="f-self-left">2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Self Center</h5>
       <div class="example example-container2">
         <div class="f-column f-left">
@@ -326,7 +307,7 @@
           <span class="f-self-center">2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Self Right</h5>
       <div class="example example-container2">
         <div class="f-column f-left">
@@ -334,7 +315,7 @@
           <span class="f-self-right">2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
       <h5>Self Stretch</h5>
       <div class="example example-container2">
         <div class="f-column f-left">
@@ -342,7 +323,7 @@
           <span class="f-self-stretch">2</span>
           <span>3</span>
         </div>
-      </div> 
+      </div>
 
 
       <h3>Grow</h3>
@@ -408,7 +389,7 @@
         </div>
       </div>
 
-      <h3>Toolbar example with grow</h3> 
+      <h3>Toolbar example with grow</h3>
       <div class="example example-container">
         <div class="toolbar f-row f-middle f-padding">
           <i class="material-icons">menu</i>
@@ -419,7 +400,7 @@
         </div>
       </div>
 
-      <h3>Toolbar nested in a column with scrolling page that grows</h3> 
+      <h3>Toolbar nested in a column with scrolling page that grows</h3>
       <div class="example example-container3">
         <div class="f-column">
           <div class="toolbar f-row f-middle f-padding">
@@ -436,7 +417,7 @@
         </div>
       </div>
 
-      <h3>Above example nested in row layout with responsive side navigation</h3> 
+      <h3>Above example nested in row layout with responsive side navigation</h3>
       <div class="example example-container3">
         <div class="f-row f-stretch">
           <div class="sidenav f-hide-s f-column f-padding">
@@ -466,10 +447,10 @@
       </div>
 
       <h4>Internet Explorer 11 Alignment</h4>
-      
-      <p>Alignment of items require that the element have a height 
+
+      <p>Alignment of items require that the element have a height
       or width specified or inherited. Simply specifying a
-      max-height or max-width is not enough.</p>  
+      max-height or max-width is not enough.</p>
 
       <h4>Additional classes used in these examples</h4>
       <style>
@@ -480,7 +461,7 @@
 
           .toolbar > .f-grow {
             background-color: transparent !important;
-          }  
+          }
           .sidenav {
             width: 150px;
             background-color: rgba(0,0,0, 0.2) !important;
@@ -488,14 +469,24 @@
        </style>
 
     </div>
+    <script src="lib/jquery.min.js"></script>
+    <script>
+      $(function(){
+
+        function snippet() {
+          var src = $(this);
+          var html = src.html();
+          var dest = $('<div id="snippet">');
+          dest.text(html);
+          var pre = $('<pre>');
+          pre.append(dest);
+          src.after(pre);
+        }
+
+        $('body style').each(snippet);
+        $('.example').each(snippet);
+
+      });
+    </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
