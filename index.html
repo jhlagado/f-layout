@@ -1,629 +1,143 @@
-<html>
-  <head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="lib/dist/materialize.min.css" rel="stylesheet">
-    <link href="dist/f-layout.min.css" rel="stylesheet">
-    <style>
-      .page {
-          width:90%;
-          max-width: 800px;
-          margin: 30px auto;
+@mixin layout-rules-common($suffix) {
+
+  .f-row#{$suffix}, .f-column#{$suffix} {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & > * {
+      flex: 0 0 auto; 
+    }
+
+    &.f-show#{$suffix} {
+      display: flex;
+    }
+
+    &.f-padding#{$suffix} > * { 
+      padding:10px;
+    }
+
+    &.f-margin#{$suffix} > * {
+      margin:10px;
+    }
+
+  }
+
+
+}
+
+@mixin layout-rules($suffix) {
+  
+  @include layout-rules-common($suffix);
+  
+  .f-row#{$suffix} {
+    flex-direction: row; 
+    line-height: 1;
+    align-items: center;
+
+    @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, 
+    space-between: space-between, space-around: space-around, stretch: stretch) {
+
+      &.f-wrap-#{$type}#{$suffix} {
+        flex-wrap :wrap;
+        align-content: $prop;
       }
+    }
 
-      .f-row span, .f-column span {
-        background-color: rgba(0,0,0, 0.1);
+    @each $type, $prop in (left: flex-start, center: center, right: flex-end, 
+    space-between: space-between, space-around: space-around) {
+      &.f-#{$type}#{$suffix} {
+        justify-content: $prop;
       }
+    }  
 
-      .f-grow {
-        background-color: rgba(0,0,0, 0.3) !important;
+    @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, stretch: stretch, baseline: baseline) {
+      &.f-#{$type}#{$suffix} {
+        align-items: $prop;
       }
+    }  
 
-      .example-container > div {
-        background-color: rgba(0,0,0, 0.1);
-        height: 60px;
-        font-size: 20px;
+    @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, stretch: stretch, baseline: baseline) {
+      & > .f-self-#{$type}#{$suffix} {
+        align-self: $prop; 
       }
+    }   
 
-      .example-container2 > div {
-        background-color: rgba(0,0,0, 0.1);
-        width: 100px;
-        height: 200px;
-        font-size: 20px;
+  } 
+
+  .f-column#{$suffix} {
+
+    flex-direction: column;
+    align-items: center;
+
+    @each $type, $prop in (left: flex-start, center: center, right: flex-end, 
+    space-between: space-between, space-around: space-around, stretch: stretch) {
+
+      &.f-wrap-#{$type}#{$suffix} {
+        flex-wrap :wrap;
+        align-content: $prop;
       }
+    }
 
-      .example-container3 > div {
-        border: 1px solid black;
-        background-color: white;
-        height: 400px;
-        font-size: 20px;
+    @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, space-between: space-between, space-around: space-around) {
+      &.f-#{$type}#{$suffix} {
+        justify-content: $prop;
       }
+    }  
 
-      .example-container4 > div {
-        background-color: rgba(0,0,0, 0.1);
-        height: 200px;
-        font-size: 20px;
+    @each $type, $prop in (left: flex-start, center: center, right: flex-end, stretch: stretch) {
+      &.f-#{$type}#{$suffix} {
+        align-items: $prop;
       }
+    }  
 
-      .example-container5 > div {
-        background-color: rgba(0,0,0, 0.1);
-        width: 450px;
-        font-size: 20px;
+    @each $type, $prop in (left: flex-start, center: center, right: flex-end, stretch: stretch) {
+      & > .f-self-#{$type}#{$suffix} {
+        align-self: $prop;
       }
+    }  
 
-      .example-container3 .f-grow {
-        background-color: transparent !important;
-      }
+  }
 
-    </style>
-  </head>
-  <body>
-    <div class="page">
+  .f-hide#{$suffix} { 
+    display: none;
+  }
 
-      <h1>f-layout guide</h1>
-      <p>f-layout is an easy to use alternative to grid layouts.
-      A family of composable CSS classes designed to quickly enable
-      responsive flexbox-based layout on IE 11+, Edge, Chrome, Firefox
-      and Safari browsers.</p>
-      <p>Using CSS for laying out pages has always been tricky and before CSS3
-      was done mainly by misusing CSS features in order to get the job done.
-      The idea behind f-layout is use modern CSS (now well supported
-      in browsers) to create a small set of easily learned classes
-      to enable web designers to build layouts quickly.</p>
-      <p>It uses the <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox CSS model</a>
-      but tries to avoid complexity by surfacing only its most useful features
-      and to have sensible defaults to make layout building as simple as possible.
-      </p>
-      <p>In f-layout, all layout is either in a row or a column or
-      a nested combination. Flow is from left to right, top to bottom.
-      For element alignment, it follows CSS conventions of using terms like "left", "right", "top" and "bottom".
-      It also uses the term "center" to denote horizontal centering as opposed
-      to "middle" for vertical centering.</p>
-      <p>Elements can be hidden or shown and reordered. All of the features of
-      f-layout can be applied responsively so as to deal with different
-      device screen widths.</p>
-      <p>All classes can be suffixed with s, m or l and these suffixes
-      correspond to screen width break points:</p>
-      <p>
-        <table>
-          <tr><td>suffix</td><td>meaning</td><td>break point</td></tr>
-          <tr><td>s</td><td>small</td><td>less than 600px</td></tr>
-          <tr><td>m</td><td>medium</td><td>601px to 992px</td></tr>
-          <tr><td>l</td><td>large</td><td>more than 992px</td></tr>
-        </table>
-      </p>
+  .f-show#{$suffix} {
+    display: block;
+  }
 
-      <h3>Row layout</h3>
-      <p>Alignment defaults: f-space-between, f-middle</p>
+  .f-grow#{$suffix} {
+    flex: 1 1 auto;
+  }
 
-      <h5>Left</h5>
-      <div class="example example-container">
-        <div class="f-row f-left">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Center</h5>
-      <div class="example example-container">
-        <div class="f-row">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Right</h5>
-      <div class="example example-container">
-        <div class="f-row f-right">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Space between (default)</h5>
-      <div class="example example-container">
-        <div class="f-row f-space-between">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Space around</h5>
-      <div class="example example-container">
-        <div class="f-row f-space-around">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
+  .f-shrink#{$suffix} {
+    flex: 0 0;
+  }
 
+  .f-fixed#{$suffix} {
+    flex: 0 0 auto;
+  }
 
+  @for $i from 1 through 5 {
+    .f-order-#{$i}#{$suffix} {
+      order: $i;  
+    }
+  }
 
+}
 
-      <h5>Top</h5>
-      <div class="example example-container">
-        <div class="f-row f-top">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Middle (default)</h5>
-      <div class="example example-container">
-        <div class="f-row">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Bottom</h5>
-      <div class="example example-container">
-        <div class="f-row f-bottom">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
+@include layout-rules("");
 
-      <h5>Stretch (default)</h5>
-      <div class="example example-container">
-        <div class="f-row f-stretch">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Baseline</h5>
-      <div class="example example-container">
-        <div class="f-row f-baseline">
-          <span>b</span>
-          <span>i</span>
-          <span>g</span>
-        </div>
-      </div>
+@media only screen and (max-width: 600px) {
+  @include layout-rules("-s");
+}
 
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  @include layout-rules("-m");
+}
 
-      <h3>Column Layout</h3>
-      <p>Alignment defaults: f-space-between, f-center</p>
+@media only screen and (min-width: 993px) {
+  @include layout-rules("-l");
+}
 
-      <h5>Top</h5>
-      <div class="example example-container2">
-        <div class="f-column f-top">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Middle</h5>
-      <div class="example example-container2">
-        <div class="f-column f-middle">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Bottom</h5>
-      <div class="example example-container2">
-        <div class="f-column f-bottom">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Space between (default)</h5>
-      <div class="example example-container2">
-        <div class="f-column f-space-between">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Space around</h5>
-      <div class="example example-container2">
-        <div class="f-column f-space-around">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-
-      <h5>Left</h5>
-      <div class="example example-container2">
-        <div class="f-column f-left">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Center (default)</h5>
-      <div class="example example-container2">
-        <div class="f-column f-center">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Right</h5>
-      <div class="example example-container2">
-        <div class="f-column f-right">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Stretch</h5>
-      <div class="example example-container2">
-        <div class="f-column f-stretch">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </div>
-      </div>
-
-      <h3>Self alignment</h3>
-      <p>Finer-grained alignment of individual element be achieved with
-      "self" alignment classes</p>
-
-      <h5>Self Top</h5>
-
-      <div class="example example-container">
-        <div class="f-row">
-          <span>1</span>
-          <span class="f-self-top">2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Self Middle</h5>
-      <div class="example example-container">
-        <div class="f-row f-top">
-          <span>1</span>
-          <span class="f-self-middle">2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Self Bottom</h5>
-      <div class="example example-container">
-        <div class="f-row">
-          <span>1</span>
-          <span class="f-self-bottom">2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Self Stretch</h5>
-      <div class="example example-container">
-        <div class="f-row">
-          <span>1</span>
-          <span class="f-self-stretch">2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Self Baseline</h5>
-      <div class="example example-container">
-        <div class="f-row">
-          <span>b</span>
-          <span class="f-self-baseline">i</span>
-          <span class="f-self-baseline">g</span>
-        </div>
-      </div>
-      <h5>Self Left</h5>
-      <div class="example example-container2">
-        <div class="f-column">
-          <span>1</span>
-          <span class="f-self-left">2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Self Center</h5>
-      <div class="example example-container2">
-        <div class="f-column f-left">
-          <span>1</span>
-          <span class="f-self-center">2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Self Right</h5>
-      <div class="example example-container2">
-        <div class="f-column f-left">
-          <span>1</span>
-          <span class="f-self-right">2</span>
-          <span>3</span>
-        </div>
-      </div>
-      <h5>Self Stretch</h5>
-      <div class="example example-container2">
-        <div class="f-column f-left">
-          <span>1</span>
-          <span class="f-self-stretch">2</span>
-          <span>3</span>
-        </div>
-      </div>
-
-      <h3>Wrap Row</h3>
-      Normally all elements appear on one line but they can be made to
-      wrap over multiple lines.
-
-      <h5>Wrap Top</h5>
-      <div class="example example-container4">
-        <div class="f-row f-left f-wrap-top" style="width:450px">
-          <span style="width:100px">1</span>
-          <span style="width:100px">2</span>
-          <span style="width:100px">3</span>
-          <span style="width:100px">4</span>
-          <span style="width:100px">5</span>
-          <span style="width:100px">6</span>
-        </div>
-      </div>
-
-      <h5>Wrap Middle</h5>
-      <div class="example example-container4">
-        <div class="f-row f-left f-wrap-middle" style="width:450px">
-          <span style="width:100px">1</span>
-          <span style="width:100px">2</span>
-          <span style="width:100px">3</span>
-          <span style="width:100px">4</span>
-          <span style="width:100px">5</span>
-          <span style="width:100px">6</span>
-        </div>
-      </div>
-
-      <h5>Wrap Bottom</h5>
-      <div class="example example-container4">
-        <div class="f-row f-left f-wrap-bottom" style="width:450px">
-          <span style="width:100px">1</span>
-          <span style="width:100px">2</span>
-          <span style="width:100px">3</span>
-          <span style="width:100px">4</span>
-          <span style="width:100px">5</span>
-          <span style="width:100px">6</span>
-        </div>
-      </div>
-
-      <h5>Wrap Space Around</h5>
-      <div class="example example-container4">
-        <div class="f-row f-left f-wrap-space-around" style="width:450px">
-          <span style="width:100px">1</span>
-          <span style="width:100px">2</span>
-          <span style="width:100px">3</span>
-          <span style="width:100px">4</span>
-          <span style="width:100px">5</span>
-          <span style="width:100px">6</span>
-        </div>
-      </div>
-
-      <h5>Wrap Space Between</h5>
-      <div class="example example-container4">
-        <div class="f-row f-left f-wrap-space-between" style="width:450px">
-          <span style="width:100px">1</span>
-          <span style="width:100px">2</span>
-          <span style="width:100px">3</span>
-          <span style="width:100px">4</span>
-          <span style="width:100px">5</span>
-          <span style="width:100px">6</span>
-        </div>
-      </div>
-
-      <h3>Wrap Column</h3>
-
-      <h5>Wrap Left</h5>
-      <div class="example example-container5">
-        <div class="f-column f-top f-wrap-left" style="height:450px">
-          <span style="width1:100px;height:100px">1</span>
-          <span style="width1:100px;height:100px">2</span>
-          <span style="width1:100px;height:100px">3</span>
-          <span style="width1:100px;height:100px">4</span>
-          <span style="width1:100px;height:100px">5</span>
-          <span style="width1:100px;height:100px">6</span>
-        </div>
-      </div>
-
-      <h5>Wrap Center</h5>
-      <div class="example example-container5">
-        <div class="f-column f-top f-wrap-center" style="height:450px">
-          <span style="width1:100px;height:100px">1</span>
-          <span style="width1:100px;height:100px">2</span>
-          <span style="width1:100px;height:100px">3</span>
-          <span style="width1:100px;height:100px">4</span>
-          <span style="width1:100px;height:100px">5</span>
-          <span style="width1:100px;height:100px">6</span>
-        </div>
-      </div>
-
-      <h5>Wrap Right</h5>
-      <div class="example example-container5">
-        <div class="f-column f-top f-wrap-right" style="height:450px">
-          <span style="width1:100px;height:100px">1</span>
-          <span style="width1:100px;height:100px">2</span>
-          <span style="width1:100px;height:100px">3</span>
-          <span style="width1:100px;height:100px">4</span>
-          <span style="width1:100px;height:100px">5</span>
-          <span style="width1:100px;height:100px">6</span>
-        </div>
-      </div>
-
-      <h5>Wrap Space Around</h5>
-      <div class="example example-container5">
-        <div class="f-column f-top f-wrap-space-around" style="height:450px">
-          <span style="width1:100px;height:100px">1</span>
-          <span style="width1:100px;height:100px">2</span>
-          <span style="width1:100px;height:100px">3</span>
-          <span style="width1:100px;height:100px">4</span>
-          <span style="width1:100px;height:100px">5</span>
-          <span style="width1:100px;height:100px">6</span>
-        </div>
-      </div>
-
-      <h5>Wrap Space Between</h5>
-      <div class="example example-container5">
-        <div class="f-column f-top f-wrap-space-between" style="height:450px">
-          <span style="width1:100px;height:100px">1</span>
-          <span style="width1:100px;height:100px">2</span>
-          <span style="width1:100px;height:100px">3</span>
-          <span style="width1:100px;height:100px">4</span>
-          <span style="width1:100px;height:100px">5</span>
-          <span style="width1:100px;height:100px">6</span>
-        </div>
-      </div>
-
-      <h3>Grow</h3>
-      <h5>Growing elements take the available space</h5>
-      <div class="example example-container">
-        <div class="f-row">
-          <span>1</span>
-          <span class="f-grow">2</span>
-          <span>3</span>
-        </div>
-      </div>
-
-      <div class="example example-container2">
-        <div class="f-column">
-          <span>1</span>
-          <span class="f-grow">2</span>
-          <span>3</span>
-        </div>
-      </div>
-
-      <h5>Two growing elements share the space</h5>
-      <div class="example example-container">
-        <div class="f-row">
-          <span>1</span>
-          <span class="f-grow">2</span>
-          <span class="f-grow">3</span>
-        </div>
-      </div>
-
-      <div class="example example-container2">
-        <div class="f-column">
-          <span>1</span>
-          <span class="f-grow">2</span>
-          <span class="f-grow">3</span>
-        </div>
-      </div>
-
-      <h5>Using with text alignment</h5>
-      <div class="example example-container">
-        <div class="f-row">
-          <span>1</span>
-          <span class="f-grow" style="text-align: right;">2</span>
-          <span>3</span>
-        </div>
-      </div>
-
-      <h5>Ordering</h5>
-      <div class="example example-container">
-        <div class="f-row">
-          <span class="f-order-3">1</span>
-          <span class="f-order-1">2</span>
-          <span class="f-order-2">3</span>
-        </div>
-      </div>
-
-      <h5>Responsive layout</h5>
-
-      <div class="example example-container">
-        <div class="f-row f-column-s">
-          <span class="f-hide-s f-grow-s">1</span>
-          <span class="f-order-2-s f-grow-s">2</span>
-          <span class="f-order-1-s f-grow-s">3</span>
-        </div>
-      </div>
-
-      <h3>Toolbar example with grow</h3>
-      <div class="example example-container">
-        <div class="toolbar f-row f-padding">
-          <i class="material-icons">menu</i>
-          <strong class="f-grow">Welcome to f-layout </strong>
-          <i class="material-icons">email</i>
-          <img style="width:56px;height:56px;border-radius:50%;"
-              src="https://s.gravatar.com/avatar/f850593bdae3cb1c8c535b4acfdfdb98?s=80">
-        </div>
-      </div>
-
-      <h3>Toolbar nested in a column with scrolling page that grows</h3>
-      <div class="example example-container3">
-        <div class="f-column f-stretch">
-          <div class="toolbar f-row f-padding">
-            <i class="material-icons">menu</i>
-            <strong class="f-grow">Welcome to f-layout </strong>
-            <i class="material-icons">email</i>
-            <img style="width:56px;height:56px;border-radius:50%;"
-                src="https://s.gravatar.com/avatar/f850593bdae3cb1c8c535b4acfdfdb98?s=80">
-          </div>
-          <div class="f-grow scrollpage" style="overflow-y:auto">
-            <div style="height:1000px;">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h3>Above example nested in row layout with responsive side navigation</h3>
-      <div class="example example-container3">
-        <div class="f-row f-stretch">
-          <div class="sidenav f-hide-s f-column f-stretch f-padding">
-            <div class="f-row f-center" style="background:rgba(0,0,0,0.1);height:80px;">
-              Logo
-            </div>
-            <div class="f-grow">
-              <div>123</div>
-              <div>456</div>
-              <div>789</div>
-            </div>
-          </div>
-          <div class="f-column f-stretch f-grow">
-            <div class="toolbar f-row f-padding">
-              <i class="material-icons">menu</i>
-              <strong class="f-grow">Welcome to f-layout </strong>
-              <i class="material-icons">email</i>
-              <img style="width:56px;height:56px;border-radius:50%;"
-                  src="https://s.gravatar.com/avatar/f850593bdae3cb1c8c535b4acfdfdb98?s=80">
-            </div>
-            <div class="f-grow scrollpage" style="overflow-y:auto">
-              <div style="height:1000px;">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h4>Internet Explorer 11 Alignment</h4>
-
-      <p>Alignment of items require that the element have a height
-      or width specified or inherited. Simply specifying a
-      max-height or max-width is not enough.</p>
-
-      <h4>Additional classes used in these examples</h4>
-      <style>
-          .toolbar {
-            height: 60px;
-            background-color: rgba(0,0,0, 0.3) !important;
-          }
-
-          .toolbar > .f-grow {
-            background-color: transparent !important;
-          }
-          .sidenav {
-            width: 150px;
-            background-color: rgba(0,0,0, 0.2) !important;
-          }
-       </style>
-
-    </div>
-    <script src="lib/jquery.min.js"></script>
-    <script>
-      $(function(){
-
-        function snippet() {
-          var src = $(this);
-          var html = src.html();
-          var dest = $('<div id="snippet">');
-          dest.text(html);
-          var pre = $('<pre>');
-          pre.append(dest);
-          src.after(pre);
-        }
-
-        $('body style').each(snippet);
-        $('.example').each(snippet);
-
-      });
-    </script>
-  </body>
-</html>
