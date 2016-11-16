@@ -31,8 +31,8 @@ and this is what it looks like:
 Here's a reasonably complicated example:
 ```html
 <div class="f-row f-stretch">
-  <div class="sidenav f-hide-s f-column f-padding">
-    <div class="f-row f-center f-middle" style="background:rgba(0,0,0,0.1);height:80px;">
+  <div class="f-hide-s f-column f-stretch f-padding">
+    <div class="f-row f-center" style="height:80px;">
       Logo
     </div>
     <div class="f-grow">
@@ -41,15 +41,15 @@ Here's a reasonably complicated example:
       <div>789</div>
     </div>
   </div>
-  <div class="f-column f-grow">
-    <div class="toolbar f-row f-middle f-padding">
+  <div class="f-column f-stretch f-grow">
+    <div class="f-row f-padding">
       <i class="material-icons">menu</i>
       <strong class="f-grow">Welcome to f-layout </strong>
       <i class="material-icons">email</i>
       <img style="width:56px;height:56px;border-radius:50%;"
           src="https://s.gravatar.com/avatar/f850593bdae3cb1c8c535b4acfdfdb98?s=80">
     </div>
-    <div class="f-grow scrollpage" style="overflow-y:auto">
+    <div class="f-grow" style="overflow-y:auto">
       <div style="height:1000px;">
       </div>
     </div>
@@ -80,8 +80,6 @@ correspond to screen width break points:
   <tr><td>l</td><td>large</td><td>more than 992px</td></tr>
 </table>
 
-[Go here](https://jhlagado.github.io/f-layout) to read the f-layout documentation.
-
 ### Installing
 
 #### Using Npm
@@ -105,3 +103,7 @@ Add this tag to your html:
 ```html
     <link href="bower_components/f-layout/dist/f-layout.min.css" rel="stylesheet">
 ```
+
+#### Documentation
+
+[Go here](https://jhlagado.github.io/f-layout) to read the f-layout documentation.

@@ -38,6 +38,18 @@
         font-size: 20px;
       }
 
+      .example-container4 > div {
+        background-color: rgba(0,0,0, 0.1);
+        height: 200px;
+        font-size: 20px;
+      }
+
+      .example-container5 > div {
+        background-color: rgba(0,0,0, 0.1);
+        width: 450px;
+        font-size: 20px;
+      }
+
       .example-container3 .f-grow {
         background-color: transparent !important;
       }
@@ -81,11 +93,11 @@
       </p>
 
       <h3>Row layout</h3>
-      <p>Alignment defaults: f-space-between, f-stretch</p>
+      <p>Alignment defaults: f-space-between, f-middle</p>
 
       <h5>Left</h5>
       <div class="example example-container">
-        <div class="f-row f-left f-middle">
+        <div class="f-row f-left">
           <span>1</span>
           <span>2</span>
           <span>3</span>
@@ -93,7 +105,7 @@
       </div>
       <h5>Center</h5>
       <div class="example example-container">
-        <div class="f-row f-center f-middle">
+        <div class="f-row">
           <span>1</span>
           <span>2</span>
           <span>3</span>
@@ -101,7 +113,7 @@
       </div>
       <h5>Right</h5>
       <div class="example example-container">
-        <div class="f-row f-right f-middle">
+        <div class="f-row f-right">
           <span>1</span>
           <span>2</span>
           <span>3</span>
@@ -117,7 +129,7 @@
       </div>
       <h5>Space around</h5>
       <div class="example example-container">
-        <div class="f-row f-space-around f-middle">
+        <div class="f-row f-space-around">
           <span>1</span>
           <span>2</span>
           <span>3</span>
@@ -135,9 +147,9 @@
           <span>3</span>
         </div>
       </div>
-      <h5>Middle</h5>
+      <h5>Middle (default)</h5>
       <div class="example example-container">
-        <div class="f-row f-middle">
+        <div class="f-row">
           <span>1</span>
           <span>2</span>
           <span>3</span>
@@ -154,7 +166,7 @@
 
       <h5>Stretch (default)</h5>
       <div class="example example-container">
-        <div class="f-row f-stretch f-middle">
+        <div class="f-row f-stretch">
           <span>1</span>
           <span>2</span>
           <span>3</span>
@@ -171,11 +183,11 @@
 
 
       <h3>Column Layout</h3>
-      <p>Alignment defaults: f-space-between, f-stretch</p>
+      <p>Alignment defaults: f-space-between, f-center</p>
 
       <h5>Top</h5>
       <div class="example example-container2">
-        <div class="f-column f-top f-center">
+        <div class="f-column f-top">
           <span>1</span>
           <span>2</span>
           <span>3</span>
@@ -183,7 +195,7 @@
       </div>
       <h5>Middle</h5>
       <div class="example example-container2">
-        <div class="f-column f-middle f-center">
+        <div class="f-column f-middle">
           <span>1</span>
           <span>2</span>
           <span>3</span>
@@ -191,7 +203,7 @@
       </div>
       <h5>Bottom</h5>
       <div class="example example-container2">
-        <div class="f-column f-bottom f-center">
+        <div class="f-column f-bottom">
           <span>1</span>
           <span>2</span>
           <span>3</span>
@@ -199,7 +211,7 @@
       </div>
       <h5>Space between (default)</h5>
       <div class="example example-container2">
-        <div class="f-column f-space-between f-center">
+        <div class="f-column f-space-between">
           <span>1</span>
           <span>2</span>
           <span>3</span>
@@ -207,7 +219,7 @@
       </div>
       <h5>Space around</h5>
       <div class="example example-container2">
-        <div class="f-column f-space-around f-center">
+        <div class="f-column f-space-around">
           <span>1</span>
           <span>2</span>
           <span>3</span>
@@ -222,7 +234,7 @@
           <span>3</span>
         </div>
       </div>
-      <h5>Center</h5>
+      <h5>Center (default)</h5>
       <div class="example example-container2">
         <div class="f-column f-center">
           <span>1</span>
@@ -238,7 +250,7 @@
           <span>3</span>
         </div>
       </div>
-      <h5>Stretch (default)</h5>
+      <h5>Stretch</h5>
       <div class="example example-container2">
         <div class="f-column f-stretch">
           <span>1</span>
@@ -247,14 +259,14 @@
         </div>
       </div>
 
-      <h5>Self alignment</h5>
+      <h3>Self alignment</h3>
       <p>Finer-grained alignment of individual element be achieved with
       "self" alignment classes</p>
 
       <h5>Self Top</h5>
 
       <div class="example example-container">
-        <div class="f-row f-middle">
+        <div class="f-row">
           <span>1</span>
           <span class="f-self-top">2</span>
           <span>3</span>
@@ -270,7 +282,7 @@
       </div>
       <h5>Self Bottom</h5>
       <div class="example example-container">
-        <div class="f-row f-middle">
+        <div class="f-row">
           <span>1</span>
           <span class="f-self-bottom">2</span>
           <span>3</span>
@@ -278,7 +290,7 @@
       </div>
       <h5>Self Stretch</h5>
       <div class="example example-container">
-        <div class="f-row f-middle">
+        <div class="f-row">
           <span>1</span>
           <span class="f-self-stretch">2</span>
           <span>3</span>
@@ -286,7 +298,7 @@
       </div>
       <h5>Self Baseline</h5>
       <div class="example example-container">
-        <div class="f-row f-middle">
+        <div class="f-row">
           <span>b</span>
           <span class="f-self-baseline">i</span>
           <span class="f-self-baseline">g</span>
@@ -294,7 +306,7 @@
       </div>
       <h5>Self Left</h5>
       <div class="example example-container2">
-        <div class="f-column f-center">
+        <div class="f-column">
           <span>1</span>
           <span class="f-self-left">2</span>
           <span>3</span>
@@ -325,6 +337,131 @@
         </div>
       </div>
 
+      <h3>Wrap Row</h3>
+      Normally all elements appear on one line but they can be made to
+      wrap over multiple lines.
+
+      <h5>Wrap Top</h5>
+      <div class="example example-container4">
+        <div class="f-row f-left f-wrap-top" style="width:450px">
+          <span style="width:100px">1</span>
+          <span style="width:100px">2</span>
+          <span style="width:100px">3</span>
+          <span style="width:100px">4</span>
+          <span style="width:100px">5</span>
+          <span style="width:100px">6</span>
+        </div>
+      </div>
+
+      <h5>Wrap Middle</h5>
+      <div class="example example-container4">
+        <div class="f-row f-left f-wrap-middle" style="width:450px">
+          <span style="width:100px">1</span>
+          <span style="width:100px">2</span>
+          <span style="width:100px">3</span>
+          <span style="width:100px">4</span>
+          <span style="width:100px">5</span>
+          <span style="width:100px">6</span>
+        </div>
+      </div>
+
+      <h5>Wrap Bottom</h5>
+      <div class="example example-container4">
+        <div class="f-row f-left f-wrap-bottom" style="width:450px">
+          <span style="width:100px">1</span>
+          <span style="width:100px">2</span>
+          <span style="width:100px">3</span>
+          <span style="width:100px">4</span>
+          <span style="width:100px">5</span>
+          <span style="width:100px">6</span>
+        </div>
+      </div>
+
+      <h5>Wrap Space Around</h5>
+      <div class="example example-container4">
+        <div class="f-row f-left f-wrap-space-around" style="width:450px">
+          <span style="width:100px">1</span>
+          <span style="width:100px">2</span>
+          <span style="width:100px">3</span>
+          <span style="width:100px">4</span>
+          <span style="width:100px">5</span>
+          <span style="width:100px">6</span>
+        </div>
+      </div>
+
+      <h5>Wrap Space Between</h5>
+      <div class="example example-container4">
+        <div class="f-row f-left f-wrap-space-between" style="width:450px">
+          <span style="width:100px">1</span>
+          <span style="width:100px">2</span>
+          <span style="width:100px">3</span>
+          <span style="width:100px">4</span>
+          <span style="width:100px">5</span>
+          <span style="width:100px">6</span>
+        </div>
+      </div>
+
+      <h3>Wrap Column</h3>
+
+      <h5>Wrap Left</h5>
+      <div class="example example-container5">
+        <div class="f-column f-top f-wrap-left" style="height:450px">
+          <span style="width1:100px;height:100px">1</span>
+          <span style="width1:100px;height:100px">2</span>
+          <span style="width1:100px;height:100px">3</span>
+          <span style="width1:100px;height:100px">4</span>
+          <span style="width1:100px;height:100px">5</span>
+          <span style="width1:100px;height:100px">6</span>
+        </div>
+      </div>
+
+      <h5>Wrap Center</h5>
+      <div class="example example-container5">
+        <div class="f-column f-top f-wrap-center" style="height:450px">
+          <span style="width1:100px;height:100px">1</span>
+          <span style="width1:100px;height:100px">2</span>
+          <span style="width1:100px;height:100px">3</span>
+          <span style="width1:100px;height:100px">4</span>
+          <span style="width1:100px;height:100px">5</span>
+          <span style="width1:100px;height:100px">6</span>
+        </div>
+      </div>
+
+      <h5>Wrap Right</h5>
+      <div class="example example-container5">
+        <div class="f-column f-top f-wrap-right" style="height:450px">
+          <span style="width1:100px;height:100px">1</span>
+          <span style="width1:100px;height:100px">2</span>
+          <span style="width1:100px;height:100px">3</span>
+          <span style="width1:100px;height:100px">4</span>
+          <span style="width1:100px;height:100px">5</span>
+          <span style="width1:100px;height:100px">6</span>
+        </div>
+      </div>
+
+      <h5>Wrap Space Around</h5>
+      <div class="example example-container5">
+        <div class="f-column f-top f-wrap-space-around" style="height:450px">
+          <span style="width1:100px;height:100px">1</span>
+          <span style="width1:100px;height:100px">2</span>
+          <span style="width1:100px;height:100px">3</span>
+          <span style="width1:100px;height:100px">4</span>
+          <span style="width1:100px;height:100px">5</span>
+          <span style="width1:100px;height:100px">6</span>
+        </div>
+      </div>
+
+      <h5>Wrap Space Between</h5>
+      <div class="example example-container5">
+        <div class="f-column f-top f-wrap-space-between" style="height:450px">
+          <span style="width1:100px;height:100px">1</span>
+          <span style="width1:100px;height:100px">2</span>
+          <span style="width1:100px;height:100px">3</span>
+          <span style="width1:100px;height:100px">4</span>
+          <span style="width1:100px;height:100px">5</span>
+          <span style="width1:100px;height:100px">6</span>
+        </div>
+      </div>
 
       <h3>Grow</h3>
       <h5>Growing elements take the available space</h5>
@@ -391,7 +528,7 @@
 
       <h3>Toolbar example with grow</h3>
       <div class="example example-container">
-        <div class="toolbar f-row f-middle f-padding">
+        <div class="toolbar f-row f-padding">
           <i class="material-icons">menu</i>
           <strong class="f-grow">Welcome to f-layout </strong>
           <i class="material-icons">email</i>
@@ -402,8 +539,8 @@
 
       <h3>Toolbar nested in a column with scrolling page that grows</h3>
       <div class="example example-container3">
-        <div class="f-column">
-          <div class="toolbar f-row f-middle f-padding">
+        <div class="f-column f-stretch">
+          <div class="toolbar f-row f-padding">
             <i class="material-icons">menu</i>
             <strong class="f-grow">Welcome to f-layout </strong>
             <i class="material-icons">email</i>
@@ -420,8 +557,8 @@
       <h3>Above example nested in row layout with responsive side navigation</h3>
       <div class="example example-container3">
         <div class="f-row f-stretch">
-          <div class="sidenav f-hide-s f-column f-padding">
-            <div class="f-row f-center f-middle" style="background:rgba(0,0,0,0.1);height:80px;">
+          <div class="sidenav f-hide-s f-column f-stretch f-padding">
+            <div class="f-row f-center" style="background:rgba(0,0,0,0.1);height:80px;">
               Logo
             </div>
             <div class="f-grow">
@@ -430,8 +567,8 @@
               <div>789</div>
             </div>
           </div>
-          <div class="f-column f-grow">
-            <div class="toolbar f-row f-middle f-padding">
+          <div class="f-column f-stretch f-grow">
+            <div class="toolbar f-row f-padding">
               <i class="material-icons">menu</i>
               <strong class="f-grow">Welcome to f-layout </strong>
               <i class="material-icons">email</i>
