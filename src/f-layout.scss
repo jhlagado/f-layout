@@ -37,9 +37,9 @@
 
     @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, 
     space-between: space-between, space-around: space-around, stretch: stretch) {
-      flex-wrap :wrap;
 
       &.f-wrap-#{$type}#{$suffix} {
+        flex-wrap :wrap;
         align-content: $prop;
       }
     }
@@ -72,9 +72,9 @@
 
     @each $type, $prop in (left: flex-start, center: center, right: flex-end, 
     space-between: space-between, space-around: space-around, stretch: stretch) {
-      flex-wrap :wrap;
 
       &.f-wrap-#{$type}#{$suffix} {
+        flex-wrap :wrap;
         align-content: $prop;
       }
     }
