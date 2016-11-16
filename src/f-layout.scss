@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: stretch;
 
     & > * {
       flex: 0 0 auto; 
@@ -34,8 +33,19 @@
   .f-row#{$suffix} {
     flex-direction: row; 
     line-height: 1;
+    align-items: center;
 
-    @each $type, $prop in (left: flex-start, center: center, right: flex-end, space-between: space-between, space-around: space-around) {
+    @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, 
+    space-between: space-between, space-around: space-around, stretch: stretch) {
+      flex-wrap :wrap;
+
+      &.f-wrap-#{$type}#{$suffix} {
+        align-content: $prop;
+      }
+    }
+
+    @each $type, $prop in (left: flex-start, center: center, right: flex-end, 
+    space-between: space-between, space-around: space-around) {
       &.f-#{$type}#{$suffix} {
         justify-content: $prop;
       }
@@ -53,11 +63,21 @@
       }
     }   
 
-  }
+  } 
 
   .f-column#{$suffix} {
 
     flex-direction: column;
+    align-items: center;
+
+    @each $type, $prop in (left: flex-start, center: center, right: flex-end, 
+    space-between: space-between, space-around: space-around, stretch: stretch) {
+      flex-wrap :wrap;
+
+      &.f-wrap-#{$type}#{$suffix} {
+        align-content: $prop;
+      }
+    }
 
     @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, space-between: space-between, space-around: space-around) {
       &.f-#{$type}#{$suffix} {
