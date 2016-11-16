@@ -39,7 +39,7 @@
     space-between: space-between, space-around: space-around, stretch: stretch) {
 
       &.f-wrap-#{$type}#{$suffix} {
-        flex-wrap :wrap;
+        flex-wrap: wrap;
         align-content: $prop;
       }
     }
@@ -74,7 +74,7 @@
     space-between: space-between, space-around: space-around, stretch: stretch) {
 
       &.f-wrap-#{$type}#{$suffix} {
-        flex-wrap :wrap;
+        flex-wrap: wrap; 
         align-content: $prop;
       }
     }
