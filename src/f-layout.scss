@@ -1,16 +1,35 @@
+@mixin prefixValue($map) {
+  
+  $prefix : '-webkit-';
+  @each $prop, $value in $map {
+    #{$prop}:  #{$prefix}#{$value};  
+    #{$prop}: #{$value};  
+  }
+}
+
+@mixin prefixProp($map) {
+  
+  $prefix : '-webkit-';
+  @each $prop, $value in $map {
+    #{$prefix}#{$prop}: #{$value};  
+    #{$prop}: #{$value};  
+  }
+}
+
 @mixin layout-rules-common($suffix) {
 
   .f-row#{$suffix}, .f-column#{$suffix} {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+    @include prefixValue((display: flex));
+    @include prefixProp((flex-direction: row));
+    @include prefixProp((justify-content: space-between));
 
     & > * {
-      flex: 0 0 auto; 
+      @include prefixProp((flex: "0 0 auto"));
     }
 
     &.f-show#{$suffix} {
-      display: flex;
+      @include prefixValue((display: flex));
     }
 
     &.f-padding#{$suffix} > * { 
@@ -31,35 +50,35 @@
   @include layout-rules-common($suffix);
   
   .f-row#{$suffix} {
-    flex-direction: row; 
+    @include prefixProp((flex-direction: row));
     line-height: 1;
-    align-items: center;
+    @include prefixProp((align-items: center));
 
     @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, 
     space-between: space-between, space-around: space-around, stretch: stretch) {
 
       &.f-wrap-#{$type}#{$suffix} {
-        flex-wrap: wrap;
-        align-content: $prop;
+        @include prefixProp((flex-wrap: wrap));
+        @include prefixProp((align-content: $prop));
       }
     }
 
     @each $type, $prop in (left: flex-start, center: center, right: flex-end, 
     space-between: space-between, space-around: space-around) {
       &.f-#{$type}#{$suffix} {
-        justify-content: $prop;
+        @include prefixProp((justify-content: $prop));
       }
     }  
 
     @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, stretch: stretch, baseline: baseline) {
       &.f-#{$type}#{$suffix} {
-        align-items: $prop;
+        @include prefixProp((align-items: $prop));
       }
     }  
 
     @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, stretch: stretch, baseline: baseline) {
       & > .f-self-#{$type}#{$suffix} {
-        align-self: $prop; 
+        @include prefixProp((align-self: $prop));
       }
     }   
 
@@ -67,33 +86,33 @@
 
   .f-column#{$suffix} {
 
-    flex-direction: column;
-    align-items: center;
+    @include prefixProp((flex-direction: column));
+    @include prefixProp((align-items: center));
 
     @each $type, $prop in (left: flex-start, center: center, right: flex-end, 
     space-between: space-between, space-around: space-around, stretch: stretch) {
 
       &.f-wrap-#{$type}#{$suffix} {
-        flex-wrap: wrap; 
-        align-content: $prop;
+        @include prefixProp((flex-wrap: wrap)); 
+        @include prefixProp((align-content: $prop));
       }
     }
 
     @each $type, $prop in (top: flex-start, middle: center, bottom: flex-end, space-between: space-between, space-around: space-around) {
       &.f-#{$type}#{$suffix} {
-        justify-content: $prop;
+        @include prefixProp((justify-content: $prop))
       }
     }  
 
     @each $type, $prop in (left: flex-start, center: center, right: flex-end, stretch: stretch) {
       &.f-#{$type}#{$suffix} {
-        align-items: $prop;
+        @include prefixProp((align-items: $prop))
       }
     }  
 
     @each $type, $prop in (left: flex-start, center: center, right: flex-end, stretch: stretch) {
       & > .f-self-#{$type}#{$suffix} {
-        align-self: $prop;
+        @include prefixProp((align-self: $prop))
       }
     }  
 
@@ -108,20 +127,20 @@
   }
 
   .f-grow#{$suffix} {
-    flex: 1 1 auto;
+    @include prefixProp((flex: 1 1 auto))
   }
 
   .f-shrink#{$suffix} {
-    flex: 0 0;
+    @include prefixProp((flex: 0 0))
   }
 
   .f-fixed#{$suffix} {
-    flex: 0 0 auto;
+    @include prefixProp((flex: 0 0 auto))
   }
 
   @for $i from 1 through 5 {
     .f-order-#{$i}#{$suffix} {
-      order: $i;  
+      @include prefixProp((order: $i))
     }
   }
 
